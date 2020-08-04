@@ -56,7 +56,7 @@ class email_bomber:
             print(bcolors.RED + '\n Initializing...')
             self.target = str(input(bcolors.GREEN + 'Enter Target E-mail : '))
             print(bcolors.RED +'\n**********BOMBING MODES**********\n' + bcolors.RED + 'Mode 1 : (1000)\t' + bcolors.RED + 'Mode 2: (500)\t' + bcolors.RED + 'Mode 3: (250)\t' + bcolors.RED + 'Mode 4: (custom)\t')
-            self.mode = int(input(bcolors.GREEN + 'Choose Bombing Mode (1,2,3,4)'))
+            self.mode = int(input(bcolors.GREEN + 'Choose Bombing Mode (1,2,3,4): '))
 
             if self.mode > int(4) or int(self.mode < int(1)):
                 print('ERROR: Invalid Option. Exiting...')
